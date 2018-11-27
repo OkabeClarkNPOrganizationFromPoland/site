@@ -1,0 +1,212 @@
+body{
+	margin:0px;
+	padding:0px;
+	background:white;
+	}
+
+
+nav
+{
+	height:92px;
+	width:100%;
+	background:#111111;
+}
+
+ul{
+	padding:0px;
+	height:92px;
+	list-style-type:none;
+	line-height:90px;
+	width:58%;
+	float:left;
+	margin:0px;
+}	
+li:last-child
+{
+	margin-right:0px;
+}
+	/* za duze obrazki */
+.content
+{
+	width:1040px;
+	height:auto;
+	margin:0px auto;
+	position:relative;
+}
+	/*font-family dla a tag czy dla body ??*/
+a{
+	color:#fafafa;
+	font-family:Arial ,sans-serif;
+	font-size:14px;
+	width:auto;
+	text-align:right;
+}
+li{
+	display:block;
+	float:left;
+	margin-right:19px;
+	width:50px;
+	font-weight:bold;
+	text-align:right;
+}
+
+section{
+	width:100%;
+	margin:0px auto;
+	background:#ffffff;
+	height:auto;
+	box-shadow:10px 0px 10px grey;
+	height:600px;
+}
+
+section div{
+	width:1040px;
+	margin:0px auto;
+}
+
+footer{
+	width:100%;
+	height:100px;
+	background:#f5f5f5;
+	padding-top:40px;
+}
+.section{
+	position:absolute;
+	top:250px;
+	width:290px;
+}
+
+.right{
+	right:0px;	
+}
+
+.section h1{
+	font-weight:bold;
+	font-size:70px;
+	color:#111111;
+}
+.section p{
+	font-size:18px;
+	color:#666666;
+}
+.japierdole{
+	background:#fafafa;
+	height:535px;
+	padding-top:66px;
+	box-shadow:none;
+	margin-top:1px;
+	opacity:0.8;
+	position:relative;
+}
+
+.box{
+	width:309px;
+	height:auto;
+	background:#FFFFFF;
+	padding:8px;
+	float:left;
+	margin-right:55px;
+	box-shadow:0px 0px 10px grey;
+}
+.box img {
+	width:100%;
+	margin-bottom:16px;
+}
+
+.box img h6{
+	margin-bottom:20px;
+	font-family:;
+	font-size:;
+	font-style:;
+	font-weight:;
+}
+.box img h6 p{
+	
+	
+}
+.wsuwka{
+	width:100%;
+	height:100px;
+	bottom:0px;
+	float:left;
+	margin:0px auto;
+
+}
+
+.wsuwka img {
+
+}
+
+.wsuwka a img {
+	background:red;
+}
+
+footer ul{
+	width:28%;
+	float:left;
+	/* wartosci do zmiany */
+	height:35px;
+	line-height:30px;
+}
+footer ul li
+{
+	margin-right:10px;
+	text-align:center;
+	color:#333333;
+}
+footer p
+{
+	color:;
+	width:300px;
+}
+.social
+{
+	width:254px;
+	height:21px;
+	float:right;
+}
+
+.social .f
+{
+	width:80px;
+	height:21px;
+	background:#3b5998;
+	color:white;
+	border-radius: 5px;
+	margin-right:10px;
+	float:left;
+	font-size:6px;
+	padding:3px;
+}
+
+.social .f img
+{
+	margin-bottom:20px;
+}
+.social .t
+{
+	float:right;
+	width:164px;
+	height:21px;
+	background:#1DA1F2;
+	color:white;
+	border-radius: 5px;
+}
+
+.social p
+{
+	width:50px;
+	margin:none;
+	float:right;
+	margin-top:4px;
+}
+
+.social .t p
+{
+	font-size:8px;
+	width:130px;
+	margin-top:4px;
+}
+footer ul li a{
+	color:#666666;
+}
