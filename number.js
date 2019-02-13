@@ -29,6 +29,28 @@ window.addEventListener("load",function()
                     return rand;
                 }
             }
+        },
+        randomGreek:function()
+        {
+            while(true)
+            {
+                var rand=Math.round(Math.random()*100);
+                if(rand<=24)
+                {
+                    return rand;
+                }
+            }
+        },
+        randomLanguage:function(a)
+        {
+            if(a=="greek")
+            {
+                this.randomGreek();
+            }
+            else if(a=="latin")
+            {
+                this.randomLation();
+            }
         }
     };
     var Pass={
@@ -37,23 +59,122 @@ window.addEventListener("load",function()
         {
             console.log("passssssssssssssssssssssss");
                 //        str+=String.fromCodePoint(65);
-            var i=0; 
+            var i=0;
+            var b=tab;
+            console.log("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB: "+b); 
           while(i<a)
-          {
+          { 
+            console.log("i: "+i);
             console.log("passssssssssssssssssssssss");
             var random=Math.round(Math.random()*10);
-                if(random%2==0)
+            console.log("random: "+random);
+             /*   if(random%2==0)
                 {
                     console.log(tab[0]);
                     this.pass+=String.fromCodePoint(tab[0]+random);
-                }else
+                }
+                    else
                 {
                     console.log(tab[0]);
                     this.pass  +=String.fromCodePoint(tab[2]+random);
+                }    
+                */
+             if(random<5)
+             {
+                while(true)
+                {
+                    var ran=Math.round(Math.random()*100);
+                    if(ran<=tab[1]-tab[0])
+                    {
+                        console.log("<5");
+                        this.pass+=String.fromCodePoint(tab[0]+ran);
+                        console.log("ran: "+ran);  
+                        var nam=tab[0]+ran;
+                        console.log("nam: "+nam);
+                        console.log("to jest wartosc: "+tab[0]+ran);
+                        console.log("type of tab[0] "+typeof tab[0]);
+                        console.log("type of ran "+typeof ran);
+                        console.log("to jest znak: "+String.fromCodePoint(nam));
+                        console.log("i: "+i+" String: "+this.pass);
+                        break;
+                    }
+                    else
+                    {
+                        console.log("<5");
+                        var value=tab[0]+ran;
+                        console.log("ran: "+ran);
+                        console.log("to jest wartosc: "+value);
+                        console.log("nie powiodło się");
+                        break;
+                    }
                 }
+             } 
+                else if(random==5)
+             {
+                while(true)
+                {
+                    var ran=Math.round(Math.random()*100);
+                    if(ran<=tab[3]-tab[2])
+                    {
+                        console.log("5");
+                        console.log(tab[2]);
+                        console.log("ran: "+ran);
+                        console.log("to jest wartosc: "+tab[2]+ran);
+                        var nam=tab[2]+ran;
+                        console.log("nam: "+nam);
+                        console.log("type of tab[2] "+typeof tab[2]);
+                        console.log("type of ran "+typeof ran);
+                        this.pass+=String.fromCodePoint(nam);
+                        console.log("to jset znak: "+String.fromCodePoint(nam));
+                        console.log("i: "+i+" String: "+this.pass);
+                        break;
+                    }
+                    else
+                    {
+                        console.log("nie powiodło się");
+                        console.log("5");
+                        var value=tab[2]+ran;
+                        console.log("ran: "+ran);
+                        console.log("to jest wartosc: "+value);
+                        console.log("nie powiodło się");
+                        break;
+                    }
+                }
+             }
+             else if(random>5)
+             {
+                while(true)
+                {
+                    var ran=Math.round(Math.random()*100);
+                    if(ran<=tab[5]-tab[4])
+                    {
+                        console.log(">5");
+                        console.log("to jest wartosc: "+tab[4]+ran);
+                        console.log("ran: "+ran);
+                        console.log(tab[4]);
+                        var nam=tab[4]+ran;
+                        console.log("nam: "+nam);
+                        console.log("type of tab[4] "+typeof tab[4]);
+                        console.log("type of ran "+typeof ran);
+                        this.pass+=String.fromCodePoint(nam);
+                        console.log("to jest znak: "+String.fromCodePoint(nam));
+                        console.log("i: "+i+" String: "+this.pass);
+                        break;
+                    }
+                    else
+                    {
+                        console.log(">5");
+                        var value=tab[4]+ran;
+                        console.log("ran: "+ran);
+                        console.log("to jest wartosc: "+value);
+                        console.log("nie powiodło się");
+                        break;
+                    }
+                }
+             }
                console.log("pass: "+this.pass); 
-           i++;
-          } 
+           i++; 
+            }
         }, 
     };
     var Validation={
@@ -133,19 +254,20 @@ window.addEventListener("load",function()
                     }
                     else if(((this.checkedEmpty(a))&&(this.checkedEmpty(b))))
                     {
-                        scope.NumberA=Random.randomLatino(); 
-                        scope.NumberB=Random.randomLatino();
+
+                        scope.NumberA=randomLanguage(scope.language); 
+                        scope.NumberB=randomLanguage(scope.language);
                         console.log(scope.NumberA+" "+scope.NumberB);
                      // TWORZ HASLO
                     }
                     else if(((this.checkedEmpty(a))&&(this.checkedNumber(b))))
                     {
-                        scope.NumberA=Random.randomLatino(); 
+                        scope.NumberA=randomLanguage(scope.language); 
                         console.log("A: "+scope.NumberB);
                       // TWORZ HASLO
                     }else if(((this.checkedNumber(a))&&(this.checkedEmpty(b))))
                     {
-                        scope.NumberB=Random.randomLatino();
+                        scope.NumberB=randomLanguage(scope.language);
                         console.log("B: "+scope.NumberB);
                        // TWORZ HASLO
                     }
@@ -159,7 +281,7 @@ window.addEventListener("load",function()
                     }
                     else if(this.checkedEmpty(a))
                     {
-                        scope.NumberA=Random.randomLatino(); 
+                        scope.NumberA=randomLanguage(scope.language); 
                         console.log("A: "+scope.NumberA);                        
                     }
                }
@@ -169,7 +291,7 @@ window.addEventListener("load",function()
     var Active={        
         specialCharActiv:false,
         Activity:function()
-        {               
+        {       Pass.pass="";            
             var inputLength=document.getElementById("langth");
             var inputSpecial=document.getElementById("langthSpecial");
    /*         Validation.test();
@@ -223,7 +345,7 @@ window.addEventListener("load",function()
       utfLanguage.checked=false;
       chinesesLanguage.checked=false;
       scope.language="arabic";
-      scope.ArrayEmpty();
+  //    scope.ArrayEmpty();
       scope.scopeArray=[0x0622,0x64A];
       var i=0x0622;
       while(i<=0x64A)
@@ -253,8 +375,8 @@ window.addEventListener("load",function()
      utfLanguage.checked=false;
      chinesesLanguage.checked=false;
      scope.language="greek";
-     scope.specialChar=[880,912,938,1023];
-     scope.scopeArray=[913,937];
+     scope.specialChar=[880,912,938,944,970,1023];
+     scope.scopeArray=[913,937,945,969];
      var i=0x0391;
      while(i<=0x03FF)
      {
@@ -282,7 +404,7 @@ window.addEventListener("load",function()
       chinesesLanguage.checked=false;
       scope.language="utf";
       scope.scopeArray=[0,16000];
-      scope.ArrayEmpty();
+  //    scope.ArrayEmpty();
 
   }
   else
@@ -306,7 +428,7 @@ window.addEventListener("load",function()
       utfLanguage.checked=false;
       latinLanguage.checked=false;
       scope.language="chineses";
-      scope.ArrayEmpty();
+  //    scope.ArrayEmpty();
       scope.scopeArray=[0x2E80,0x2EF3];
       var i=0x2E80;
       var str="";
