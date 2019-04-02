@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            .page ul{
+                margin:0px auto;
+            }
+        </style>
+    </head>
+    <body>
+            <div data-role="page">
+                    <div data-role="header">Awesome App</div>
+                    <div role="main" class="ui-content">
+                        <ul data-role="listview" data-inset="true">
+                            <li><a href="slider.html">Teoria</a></li>
+                            <li><a href="">Praktyka</a></li>
+                            <li><a href="statystyka.html">Statystyka</a></li>
+                        </ul>
+                    </div>
+                    <div data-role="footer">...</div>
+                </div>
+                <script>
+                    $(document).ready(function()
+                    {
+                        $("a").on("click",function()
+                        {
+                            console.log("xxx");
+                            var path=$(this);
+                            console.log(path);
+                            console.log(path.attr("href"));
+                            console.log(jQuery.mobile.getDocumentBase());
+                            console.log(jQuery.mobile.path.getDocumentUrl());
+                            console.log(jQuery.mobile.path.getLocation());
+                        });
+                    });
+                </script>
+                <script type="text/javascript" src="cordova.js"></script>
+                <script type="text/javascript">
+                    app.initialize();
+                </script>
+    </body>
+</html>
